@@ -4,6 +4,12 @@
   background-size: cover;
 }
 
+.monaco {
+  font-family: "Lucida Sans Regular", sans-serif;
+  font-size: medium;
+  text-align: left;
+}
+
 .roboto {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
