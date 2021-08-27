@@ -75,10 +75,8 @@ h1{
   flex: 1 0 auto;
 }
 .encabezado {
-  font-size: 300%;
+  font-size: 250%;
   font-weight: 500;
-  font-family: "Courier New", Courier, monospace;
-  color: #990a0a;
 }
 
 /*Nav-bar*/
