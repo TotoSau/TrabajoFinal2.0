@@ -9,44 +9,19 @@ body {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
   background-color: lightgray;
   display: flex;
   flex-direction: column;
   color: #000;
 }
 
-.monaco {
-  font-family: "Lucida Sans Regular", sans-serif;
-  font-size: medium;
-  text-align: left;
-}
-
-.roboto {
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: 50px;
-  text-align: left;
-  text-decoration: underline;
-  color: #990a0a;
-}
-
-.garamond {
-  font-family: "Garamond", serif;
-  font-weight: 400;
-  font-size: 20px;
-  text-align: left;
-}
-
-.garamond2 {
-  font-family: "Garamond", serif;
-  font-weight: 400;
-  font-size: 15px;
-  text-align: left;
+@font-face {
+  font-family: hahmlet;
+  src: url(https://fonts.googleapis.com/css2?family=Hahmlet:wght@200;400;600;800&display=swap);
 }
 
 .footer__content {
-  font-family: "Roboto";
+  font-family: "Trebuchet MS", Arial, sans-serif;
   text-align: center;
   color: white;
   background-color: #990a0a;
@@ -59,38 +34,54 @@ body {
   margin-top: 1rem;
 }
 
-.flex-noticias {
+h1{
+  font-size: 150%;
+  text-decoration: underline;
+}
+
+#flex-noticias {
   display: flex;
-  padding: 5px;
   flex-direction: row;
-  width: 1250px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 5px;
   font-size: larger;
 }
-.flex-noticias div {
-  margin: 5px;
+#flex-noticias .noticia-wrapper {
+  padding: 5px;
+  flex-basis: 25%;
+  transition: all 500ms;
+}
+
+#flex-noticias .noticia {
   padding: 5px;
   justify-content: center;
   align-items: center;
+  background-color: #c7c7c7;
+}
+#flex-noticias p {
+  font-size: 18px;
+  font-family: hahmlet;
+}
+#flex-noticias img {
+  width: 100%;
 }
 
-.content {
+.header-content {
+  font-family: mosaic;
+}
+.header-content .header {
   flex: 1 0 auto;
 }
-
-.grid {
-  width: 500px;
-  display: grid;
-  column-gap: 250px;
-}
-
-.titulo {
-  grid-column: 1/3;
+.encabezado {
   font-size: 300%;
-  font-weight: bold;
-  text-decoration: underline;
+  font-weight: 500;
+  font-family: "Courier New", Courier, monospace;
   color: #990a0a;
 }
 
+/*Nav-bar*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -168,48 +159,61 @@ ul .navbar .dropdown-content a:hover {
 ul .navbar .dropdown:hover .dropdown-content {
   display: block;
 }
+/*Termina navbar*/
 
-.grid-tienda {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+#flex-tienda {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 5px;
 }
 
-.stock {
+#flex-tienda .tienda-wrapper {
+  padding: 5px;
+  flex-basis: 33%;
+  transition: all 500ms;
+}
+
+#flex-tienda .stock {
   color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: larger;
+  background-color: white;
 }
 
-.stock__element {
+#flex-tienda .stock__element {
   color: black;
   font-size: medium;
 }
 
-.stock__element--modifier {
+#flex-tienda .stock__element--modifier {
   color: blue;
   text-decoration: underline;
   font-size: medium;
 }
 
-.tablaequipos {
-  color: black;
+#flex-equipos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 5px;
 }
-.tablaequipos .tablaequipos--modifier {
-  color: inherit;
-  font-size: x-large;
-  text-decoration: underline;
+
+#flex-equipos .equipos-wrapper {
+  padding: 5px;
+  flex-basis: 25%;
+  transition: all 500ms;
 }
-.tablaequipos .tablaequipos__element,
-.tablaequipos .tablaequipos__element--modifier {
-  color: inherit;
-  font-size: large;
-}
-.tablaequipos .tablaequipos__another-element {
-  color: inherit;
-  font-size: larger;
-  font-style: italic;
+
+#flex-equipos .flexEquipos {
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7c7c7;
 }
 
 .container {
@@ -233,7 +237,8 @@ ul .navbar .dropdown:hover .dropdown-content {
 }
 
 .left {
-  background: url("https://i2.wp.com/digitalpolicylaw.com/wp-content/uploads/2020/04/dplnews_covid19_esports_vr210420.jpg") no-repeat center;
+  background: url("https://i2.wp.com/digitalpolicylaw.com/wp-content/uploads/2020/04/dplnews_covid19_esports_vr210420.jpg")
+    no-repeat center;
   background-size: cover;
   height: 100%;
 }
@@ -296,4 +301,47 @@ textarea {
   transition: 0.3s;
 }
 
-/*# sourceMappingURL=estilo.css.map */
+/*Media noticias y home*/
+/* small screens */
+@media only screen and (max-width: 768px) {
+  #flex-noticias .noticia-wrapper {
+    flex-basis: 100%;
+  }
+}
+
+/* medium screens */
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  #flex-noticias .noticia-wrapper {
+    flex-basis: 50%;
+  }
+}
+
+/*Media tienda*/
+/* small screens */
+@media only screen and (max-width: 768px) {
+  #flex-tienda .tienda-wrapper {
+    flex-basis: 100%;
+  }
+}
+
+/* medium screens */
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  #flex-tienda .tienda-wrapper {
+    flex-basis: 50%;
+  }
+}
+
+/*Media equipos*/
+/* small screens */
+@media only screen and (max-width: 768px) {
+  #flex-equipos .equipos-wrapper {
+    flex-basis: 100%;
+  }
+}
+
+/* medium screens */
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  #flex-equipos .equipos-wrapper {
+    flex-basis: 50%;
+  }
+}
